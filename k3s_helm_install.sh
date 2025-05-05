@@ -28,7 +28,9 @@ helm init --service-account tiller
 
 # Check Helm
 helm repo update
-helm search postgres
+#helm search postgres
+helm repo add open-webui https://helm.openwebui.com/
+helm search open-webui
 
 # Install NATS with Helm
 # https://hub.helm.sh/charts/bitnami/nats
