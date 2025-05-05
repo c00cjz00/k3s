@@ -32,6 +32,16 @@ helm repo update
 helm repo add open-webui https://helm.openwebui.com/
 helm search open-webui
 
+# 更新 heml3
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+
+helm repo add gen3 https://helm.gen3.org
+helm repo update
+helm upgrade --install gen3 gen3/gen3 -f ./values.yaml
+
+
 # Install NATS with Helm
 # https://hub.helm.sh/charts/bitnami/nats
 helm install --name nats --namespace demo \
